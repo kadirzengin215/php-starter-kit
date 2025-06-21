@@ -34,6 +34,7 @@
 		"pestphp/pest": "^3.8",
 		"pestphp/pest-plugin-faker": "^3.0",
 		"phpstan/phpstan": "^2.1",
+		"rector/rector": "^2.0",
 		"symfony/var-dumper": "^7.3"
 	},
 	"minimum-stability": "stable",
@@ -46,10 +47,14 @@
 		}
 	},
 	"scripts": {
+		"run:rectorphp": "rector --ansi",
 		"test:coverage": "pest --parallel --coverage --exactly=100",
 		"test:phpstan": "phpstan analyse --ansi",
+		"test:rectorphp": "rector --dry-run --ansi",
 		"test": [
 			"@test:coverage",
-			"@test:phpstan"
+			"@test:phpstan",
+			"@test:rectorphp"
+		]
 	}
 }
