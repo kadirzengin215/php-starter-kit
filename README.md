@@ -10,6 +10,7 @@ PHP starter kit provides a ready-to-use structure for quickly developing a new P
 
 -   [PHP](https://www.php.net/) >= 8.4
 -   [Composer](https://getcomposer.org/) package manager
+-   [Xdebug](https://xdebug.org/) for coverage testing (only required for testing)
 
 ## Installation
 
@@ -23,6 +24,12 @@ composer require yourname/yourpackagename
 <?php
 
 // Example usage here
+```
+
+## Testing
+
+```shell
+composer test
 ```
 
 ## License
