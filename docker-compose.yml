@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .docker/php/Dockerfile
+    volumes:
+      - .:/var/www/html
+    networks:
+      - bridge-network
+    extra_hosts:
+      host.docker.internal: host-gateway
+    tty: true
+
+networks:
+  bridge-network:
+    driver: bridge
