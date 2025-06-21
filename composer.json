@@ -31,6 +31,7 @@
         "php": ">=8.4"
     },
     "require-dev": {
+        "laravel/pint": "^1.22",
         "pestphp/pest": "^3.8",
         "pestphp/pest-plugin-faker": "^3.0",
         "pestphp/pest-plugin-type-coverage": "^3.5",
@@ -48,16 +49,19 @@
         }
     },
     "scripts": {
+        "run:pint": "pint --ansi",
         "run:rectorphp": "rector --ansi",
         "test:coverage": "pest --parallel --coverage --exactly=100",
         "test:type-coverage": "pest --parallel --type-coverage --exactly=100",
         "test:phpstan": "phpstan analyse --ansi",
         "test:rectorphp": "rector --dry-run --ansi",
+        "test:pint": "pint --test --ansi",
         "test": [
             "@test:coverage",
             "@test:type-coverage",
             "@test:phpstan",
-            "@test:rectorphp"
+            "@test:rectorphp",
+            "@test:pint"
         ]
     }
 }
