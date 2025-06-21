@@ -31,9 +31,10 @@
 		"php": ">=8.4"
 	},
 	"require-dev": {
-		"symfony/var-dumper": "^7.3",
 		"pestphp/pest": "^3.8",
-		"pestphp/pest-plugin-faker": "^3.0"
+		"pestphp/pest-plugin-faker": "^3.0",
+		"phpstan/phpstan": "^2.1",
+		"symfony/var-dumper": "^7.3"
 	},
 	"minimum-stability": "stable",
 	"prefer-stable": true,
@@ -46,8 +47,9 @@
 	},
 	"scripts": {
 		"test:coverage": "pest --parallel --coverage --exactly=100",
+		"test:phpstan": "phpstan analyse --ansi",
 		"test": [
-			"@test:coverage"
-		]
+			"@test:coverage",
+			"@test:phpstan"
 	}
 }
