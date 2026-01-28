@@ -34,8 +34,25 @@ Ensure you have [PHP >= 8.4](https://www.php.net/downloads) and [Composer](https
 - **Testing:**
 
     ```bash
-    composer run:tests
+    composer test
     ```
+
+### Available Composer Scripts
+
+You can run several scripts via Composer to check code quality, run tests, and apply code formatting:
+
+| Script                 | Command                       | Description                                     |
+| ---------------------- | ----------------------------- | ----------------------------------------------- |
+| **test**               | `composer test`               | Run all test/check scripts below in sequence.   |
+| **test:phpstan**       | `composer test:phpstan`       | Run static analysis using PHPStan.              |
+| **test:pest**          | `composer test:pest`          | Run tests with Pest (plus coverage, parallel).  |
+| **test:type-coverage** | `composer test:type-coverage` | Run Pest for type coverage checks.              |
+| **test:rector**        | `composer test:rector`        | Check code quality with Rector in dry-run mode. |
+| **test:lint**          | `composer test:lint`          | Run Pint on project to check code style.        |
+| **run:rector**         | `composer run:rector`         | Apply Rector code transformations.              |
+| **run:lint**           | `composer run:lint`           | Apply Pint code formatting.                     |
+
+> See [`composer.json`](composer.json) for more details on all scripts.
 
 ## 📄 License
 
