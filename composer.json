@@ -23,7 +23,8 @@
     "require-dev": {
         "laravel/pint": "^1.27",
         "pestphp/pest": "^4.3",
-        "pestphp/pest-plugin-type-coverage": "^4.0"
+        "pestphp/pest-plugin-type-coverage": "^4.0",
+        "phpstan/phpstan": "^2.1"
     },
     "autoload": {
         "psr-4": {
@@ -50,11 +51,13 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "test:phpstan": "phpstan analyse",
         "test:pest": "pest --coverage --parallel --exactly=100",
         "test:type-coverage": "pest --type-coverage --parallel --exactly=100",
         "test:lint": "pint --parallel --test",
         "run:lint": "pint --parallel",
         "test": [
+            "@test:phpstan",
             "@test:pest",
             "@test:type-coverage",
             "@test:lint"
