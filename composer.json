@@ -1,0 +1,47 @@
+{
+  "$schema": "https://getcomposer.org/schema.json",
+  "name": "kadirzengin215/php-starter-kit",
+  "description": "PHP starter kit is a simple PHP starter kit that provides the basic files and configuration for building modern PHP applications.",
+  "version": "1.0.0",
+  "keywords": [
+    "php",
+    "starter",
+    "kit",
+    "php-starter-kit"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kadir Zengin",
+      "email": "kadirzengin215@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kadirzengin215\\PhpStarterKit\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "php-http/discovery": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
