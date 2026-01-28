@@ -24,7 +24,8 @@
         "laravel/pint": "^1.27",
         "pestphp/pest": "^4.3",
         "pestphp/pest-plugin-type-coverage": "^4.0",
-        "phpstan/phpstan": "^2.1"
+        "phpstan/phpstan": "^2.1",
+        "rector/rector": "^2.3"
     },
     "autoload": {
         "psr-4": {
@@ -54,12 +55,15 @@
         "test:phpstan": "phpstan analyse",
         "test:pest": "pest --coverage --parallel --exactly=100",
         "test:type-coverage": "pest --type-coverage --parallel --exactly=100",
+        "test:rector": "rector process --dry-run",
         "test:lint": "pint --parallel --test",
+        "run:rector": "rector process",
         "run:lint": "pint --parallel",
         "test": [
             "@test:phpstan",
             "@test:pest",
             "@test:type-coverage",
+            "@test:rector",
             "@test:lint"
         ]
     }
