@@ -1,47 +1,59 @@
 {
-  "$schema": "https://getcomposer.org/schema.json",
-  "name": "kadirzengin215/php-starter-kit",
-  "description": "PHP starter kit is a simple PHP starter kit that provides the basic files and configuration for building modern PHP applications.",
-  "version": "1.0.0",
-  "keywords": [
-    "php",
-    "starter",
-    "kit",
-    "php-starter-kit"
-  ],
-  "type": "library",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Kadir Zengin",
-      "email": "kadirzengin215@gmail.com"
-    }
-  ],
-  "require": {
-    "php": "^8.4"
-  },
-  "autoload": {
-    "psr-4": {
-      "Kadirzengin215\\PhpStarterKit\\": "src/"
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "kadirzengin215/php-starter-kit",
+    "description": "PHP starter kit is a simple PHP starter kit that provides the basic files and configuration for building modern PHP applications.",
+    "version": "1.0.0",
+    "keywords": [
+        "php",
+        "starter",
+        "kit",
+        "php-starter-kit"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kadir Zengin",
+            "email": "kadirzengin215@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.4"
     },
-    "files": [
-      "src/helpers.php"
-    ]
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Tests\\": "tests/"
+    "require-dev": {
+        "pestphp/pest": "^4.3",
+        "pestphp/pest-plugin-type-coverage": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kadirzengin215\\PhpStarterKit\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test:pest": "pest --coverage --parallel --exactly=100",
+        "test:type-coverage": "pest --type-coverage --parallel --exactly=100",
+        "test": [
+            "@test:pest",
+            "@test:type-coverage"
+        ]
     }
-  },
-  "config": {
-    "optimize-autoloader": true,
-    "preferred-install": "dist",
-    "sort-packages": true,
-    "allow-plugins": {
-      "pestphp/pest-plugin": true,
-      "php-http/discovery": true
-    }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
 }
